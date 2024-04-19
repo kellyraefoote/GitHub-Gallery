@@ -1,4 +1,3 @@
-//This targets the div where profile information will appear//
 const overview = document.querySelector(".overview");
 const username = "kellyfreese";
 const repoList = document.querySelector(".repo-list");
@@ -11,16 +10,13 @@ const getData = async function () {
     const userInfo = await fetch(
         `https://api.github.com/users/${username}`);
         const data = await userInfo.json();
-       //console.log(data);
         displayData(data);
 };
 
 getData();
 
 const displayData = function(data) {
-    //create a new div//
     const div = document.createElement("div");
-    //add classlist "user-info" to new div//
     div.classList.add("user-info");
     div.innerHTML = `
      <figure>
@@ -72,7 +68,6 @@ const getRepoInfo = async function(repoName) {
     console.log(repoInfo);
     const fetchLanguages = await fetch(repoInfo.languages_url);
     const languageData = await fetchLanguages.json();
-    //console.log(languageData);
 
     const languages = [];
     for (const language in languageData) {
@@ -106,7 +101,6 @@ viewReposButton.addEventListener("click", function() {
 
 filterInput.addEventListener("input", function(e){
     const searchText = e.target.value
-    //console.log(searchText);
     const repos = document.querySelectorAll(".repo");
     const searchLowerText = searchText.toLowerCase();
 
