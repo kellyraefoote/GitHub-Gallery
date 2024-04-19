@@ -1,6 +1,6 @@
 //This targets the div where profile information will appear//
 const overview = document.querySelector(".overview");
-const username = "kellyraefoote";
+const username = "kellyfreese";
 const repoList = document.querySelector(".repo-list");
 const allReposContainer = document.querySelector(".repos");
 const repoData = document.querySelector(".repo-data");
